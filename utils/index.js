@@ -52,3 +52,11 @@ export const isPlainObject = (obj) => {
 export const isRegExp = (v) => {
   return _toString.call(v) === '[object RegExp]'
 }
+
+export const isPromise = (val) => {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
