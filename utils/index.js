@@ -48,3 +48,7 @@ export const toRawType = (value) => {
 export const isPlainObject = (obj) => {
   return _toString.call(obj) === '[object Object]'
 }
+
+export const isRegExp = (v) => {
+  return _toString.call(v) === '[object RegExp]'
+}
