@@ -52,3 +52,20 @@ export const isPlainObject = (obj) => {
 export const isRegExp = (v) => {
   return _toString.call(v) === '[object RegExp]'
 }
+
+export const isPromise = (val) => {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
+
+export const checkMobile = (_phone) => {
+  const mobileExp = /^(1(([356879][0-9])|(4[57])|(77)))\d{8}$/
+  return _phone && mobileExp.test(phone)
+}
+
+export const phoneNumberFormat = (_phone) => {
+  return _phone.replace(/(\d{3})(\d{4})(\d{4})/, '$1****$3');
+}
